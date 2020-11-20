@@ -44,3 +44,52 @@ dict1 {'Gender': 'Male', 'Age': 18, 'name': 'Peter'}
 dict2 {'country': 'India', 'State': 'TamilNadu'}
 TamilNadu
 ```
+
+#import datetime
+from datetime import datetime
+from datetime import datetime, timedelta
+# get current date
+now = datetime.now()
+
+# convert current date into timestamp
+timestamp = datetime.timestamp(now)
+
+print("Date and Time :", now)
+print("Timestamp:", timestamp)
+
+now = datetime.now()
+print ("Today's date: ", str(now))
+
+#add 15 days to current date
+now = datetime.now()
+plus_24_hours = now + timedelta(seconds = 86400)
+print('Date after 15 days: ', future_date_after_15days)
+ts = datetime.timestamp(future_date_after_15days)
+x = str(ts).split('.')[0]
+print(x)
+
+
+now = datetime.now()
+plus_24_hours = now + timedelta(seconds = 86400)
+ts = datetime.timestamp(plus_24_hours)
+x = str(ts).split('.')[0]
+print(x)
+
+
+
+import datetime
+a = datetime.datetime(100,1,1,11,34,59)
+b = a + datetime.timedelta(0,3) # days, seconds, then other fields.
+print(a.time())
+print(b.time())
+
+
+
+ENV TZ 'Europe/Tallinn'
+    RUN echo $TZ > /etc/timezone && \
+    apt-get update && apt-get install -y tzdata && \
+    rm /etc/localtime && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata && \
+    apt-get clean
+    
